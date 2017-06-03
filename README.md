@@ -70,8 +70,6 @@ each piece of the code and also finally pastes the scores for each of the player
 
 The top 5 are tabulated below:
 
-|Player.Name	 |Finisher.Score|
--------------------------------
 | MS Dhoni	   |    28.57     |
 | AD Mathews   |    20.69     |
 | MG Bevan	   |    20.00     |
