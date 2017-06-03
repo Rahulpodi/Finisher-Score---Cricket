@@ -60,3 +60,21 @@ POS = batting poisition
 
 The second data set may look redunant and repititve. Yes! it is and the only mandatory variable required are Player.ID/Player.Name,runs,
 ODI.number. POS though not used is one important variable
+
+## Code:
+
+A modular code was written (u can find the same in the folder "Codes"). It is sufficiently commented helping the viewer to understand
+each piece of the code and also finally pastes the scores for each of the player.
+
+## Result:
+
+The top 5 are tabulated below:
+
+Player.Name	Finisher.Score
+MS Dhoni	  28.57
+AD Mathews	20.69
+MG Bevan	  20.00
+MEK Hussey	18.52
+L Klusener	18.18
+
+The fact that only middle/lower middle order players will appear in the list should be accepted since the problem statement and criterion are aligned towards the same
