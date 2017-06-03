@@ -33,29 +33,29 @@ BR = Balls remaining,
 Bat = first or second innings in a ODI,
 Ground = the ground in which the corresponding ODI was played,
 Margin = margin by which the team won..by chasing it would be in wickets defending it would be runs,
-ODI.number = counting the number of ODIs
-Start.date = the date on which the match was played
-opposition = Opposition country
-Result = most importantly did the team win or not
+ODI.number = counting the number of ODIs,
+Start.date = the date on which the match was played,
+opposition = Opposition country,
+Result = most importantly did the team win or not,
 Toss = toss lost or won
 
 ### Player data set:
 
-Player.ID = ID assigned by cricinfo which was used for scrapping
-Player.Name = Name of the player ex. Sachin Tendulkar
-4s = No of fours
-6s = No. of sixes
-BF = no. of balls faced
-Dismissal = mode of dismissal i..e, caught, bowled
-Ground = similar to the above
-Inns = similar to "Inns" above
-Mins = time spent on the field by the player
-ODI.number = counting the number of ODIs
-Start.date = the date on which the match was played
-opposition = Opposition country
-runs = total runs scored with * denoting not-out
-score = Runs scored
-SR = strike rate
+Player.ID = ID assigned by cricinfo which was used for scrapping,
+Player.Name = Name of the player ex. Sachin Tendulkar,
+4s = No of fours,
+6s = No. of sixes,
+BF = no. of balls faced,
+Dismissal = mode of dismissal i..e, caught, bowled,
+Ground = similar to the above,
+Inns = similar to "Inns" above,
+Mins = time spent on the field by the player,
+ODI.number = counting the number of ODIs,
+Start.date = the date on which the match was played,
+opposition = Opposition country,
+runs = total runs scored with * denoting not-out,
+score = Runs scored,
+SR = strike rate,
 POS = batting poisition
 
 The second data set may look redunant and repititve. Yes! it is and the only mandatory variable required are Player.ID/Player.Name,runs,
