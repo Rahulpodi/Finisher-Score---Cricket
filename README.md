@@ -70,11 +70,12 @@ each piece of the code and also finally pastes the scores for each of the player
 
 The top 5 are tabulated below:
 
-Player.Name	Finisher.Score
-MS Dhoni	  28.57
-AD Mathews	20.69
-MG Bevan	  20.00
-MEK Hussey	18.52
-L Klusener	18.18
+|Player.Name	 |Finisher.Score|
+-------------------------------
+| MS Dhoni	   |    28.57     |
+| AD Mathews   |    20.69     |
+| MG Bevan	   |    20.00     |
+| MEK Hussey   |	  18.52     |
+| L Klusener   |	  18.18     |
 
 The fact that only middle/lower middle order players will appear in the list should be accepted since the problem statement and criterion are aligned towards the same
