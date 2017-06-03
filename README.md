@@ -9,9 +9,7 @@ had to be compared with another player to substantiate Dhoni's score. The player
 times,and he ranked below Dhoni
 
 Restarting this project, I felt the need to apply the universal finsiher criterion across all the players who have ever played One Day
-international (ODI) cricket and the best database that I could turn to was [espncricinfo.com] (http://www.espncricinfo.com/). The project 
-was done on both python and R. Scrapping was done in Python and cleaning the data (a lot!) along with arriving at the score was done 
-through R
+international (ODI) cricket and the best database that I could turn to was [espncricinfo.com] (http://www.espncricinfo.com/). The project was done on both python and R. Scrapping was done in Python and cleaning the data (a lot!) along with arriving at the score was done through R
 
 ## Universal finisher criterion*:
 
@@ -29,12 +27,12 @@ cricket follower):
 
 ### Match result data set:
 
-Player.ID = ID assigned by cricinfo which was used for scrapping
-Player.Name = Name of the player ex. Sachin Tendulkar
-BR = Balls remaining
-Bat = first or second innings in a ODI
-Ground = the ground in which the corresponding ODI was played
-Margin = margin by which the team won..by chasing it would be in wickets defending it would be runs
+Player.ID = ID assigned by cricinfo which was used for scrapping,
+Player.Name = Name of the player ex. Sachin Tendulkar,
+BR = Balls remaining,
+Bat = first or second innings in a ODI,
+Ground = the ground in which the corresponding ODI was played,
+Margin = margin by which the team won..by chasing it would be in wickets defending it would be runs,
 ODI.number = counting the number of ODIs
 Start.date = the date on which the match was played
 opposition = Opposition country
