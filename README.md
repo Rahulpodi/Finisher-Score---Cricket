@@ -80,7 +80,7 @@ The fact that only middle/lower middle order players will appear in the list sho
 I have done some visualization as below
 
 <p align="center">
-  <img src="E:/Cricinfo/Results/Consistency.png" width="350"/>
+  <img src="Finisher-Score---Cricket/Results/Consistency.png" width="350"/>
 </p>
 
 P.S: The above graph is a stacked plot
