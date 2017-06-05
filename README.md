@@ -76,4 +76,10 @@ The top 5 are tabulated below:
 | MEK Hussey   |	  18.52     |
 | L Klusener   |	  18.18     |
 
-The fact that only middle/lower middle order players will appear in the list should be accepted since the problem statement and criterion are aligned towards the same
+The fact that only middle/lower middle order players will appear in the list should be accepted since the problem statement and criterion are aligned towards the same. However, a dispute may arise questioning the consistency of the finisher and for the same
+I have done some visualization as below
+
+![alt text](https://raw.githubusercontent.com/Rahulpodi/Finisher-Score---Cricket/Results/Consistency.png)
+
+P.S: The above graph is a stacked plot
+
