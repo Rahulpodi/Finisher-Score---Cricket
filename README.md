@@ -79,7 +79,9 @@ The top 5 are tabulated below:
 The fact that only middle/lower middle order players will appear in the list should be accepted since the problem statement and criterion are aligned towards the same. However, a dispute may arise questioning the consistency of the finisher and for the same
 I have done some visualization as below
 
-![alt text](https://raw.githubusercontent.com/Rahulpodi/Finisher-Score---Cricket/Results/Consistency.png)
+<p align="center">
+  <img src="E:/Cricinfo/Results/Consistency.png" width="350"/>
+</p>
 
 P.S: The above graph is a stacked plot
 
