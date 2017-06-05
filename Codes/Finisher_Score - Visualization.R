@@ -1,5 +1,10 @@
 library(stringi)
 library(stringr)
+library(dplyr)
+library(RColorBrewer)
+library(tidyverse)
+library(data.table)
+library(scales)
 # Reading player batting data set
 player_dataset<-read.csv("E:/Cricinfo/Data/cricinfo_batting.csv",stringsAsFactors = FALSE)
 # Reading match results data set
@@ -61,6 +66,7 @@ final_dataset$Runs.Changing<-as.numeric(as.character(final_dataset$Runs.Changing
 final_dataset$Margin.Changing<-as.numeric(as.character(final_dataset$Margin.Changing))
 ####################################################################################################################
 final<-data.frame()
+final_rawdata<-data.frame()
 for(i in 1:length(unique(final_dataset$Player.Name)))
 {
      print(unique(final_dataset$Player.Name)[i])
@@ -70,9 +76,11 @@ for(i in 1:length(unique(final_dataset$Player.Name)))
      {
        if(nrow(corres_player[which(corres_player$Result=="won" & corres_player$Bat=="2nd"),])>=25)
        {
-     temp<-data.frame(unique(final_dataset$Player.Name)[i],fscore=as.numeric((nrow(corres_player[which(corres_player$Runs.Changing>=30 & corres_player$Margin.Changing<=6 & corres_player$BR<=30 & corres_player$Carried.Bat.Stauts=="Not-out" & corres_player$Result=="won" & corres_player$Bat=="2nd"),])/nrow(corres_player[which(corres_player$Result=="won" & corres_player$Bat=="2nd"),]))*100))
-     colnames(temp)<-c("Player.Name","Finisher.Score")
-     final<-rbind(final,temp)
+                temp_data<-corres_player[which(corres_player$Runs.Changing>=30 & corres_player$Margin.Changing<=6 & corres_player$BR<=30 & corres_player$Carried.Bat.Stauts=="Not-out" & corres_player$Result=="won" & corres_player$Bat=="2nd"),]
+                temp<-data.frame(unique(final_dataset$Player.Name)[i],fscore=as.numeric((nrow(corres_player[which(corres_player$Runs.Changing>=30 & corres_player$Margin.Changing<=6 & corres_player$BR<=30 & corres_player$Carried.Bat.Stauts=="Not-out" & corres_player$Result=="won" & corres_player$Bat=="2nd"),])/nrow(corres_player[which(corres_player$Result=="won" & corres_player$Bat=="2nd"),]))*100))
+                colnames(temp)<-c("Player.Name","Finisher.Score")
+                final<-rbind(final,temp)
+                final_rawdata<-rbind(final_rawdata,temp_data)
        }
      }    
 }
@@ -80,3 +88,16 @@ for(i in 1:length(unique(final_dataset$Player.Name)))
 final<-final[-which(final[,2]<=0),]
 final<-final[order(final[,2],decreasing = TRUE),]
 write.csv(final,"E:/Cricinfo/Results/finisher_score.csv",row.names = FALSE)
+write.csv(final_rawdata,"E:/Cricinfo/Results/finisher_score_rawdata.csv")
+# Visualization but now only for year wise number of finishes
+# Obtaining Start.Date
+final_rawdata[,"Start.Date"]<-player_dataset_v1[match(final_rawdata$ODI.number,player_dataset_v1$ODI.number),"Start.Date"]
+final_rawdata[,"Year"]<-format(final_rawdata[,"Start.Date"],"%Y")
+# Assigning 1,2,3 etc., for each of the years present alongside the player in increasing
+# order
+top5<-final_rawdata[which(final_rawdata$Player.Name %in% final[1:5,1]),]
+top5$Year<-as.numeric(top5$Year)
+fill=c("#F08080","#5F9EA0", "#E1B378","#56B4E9", "#F0E442")
+ggplot(top5,aes(x=Year,fill=Player.Name))+geom_area(stat = "bin",alpha=0.6,position = "stack")+
+        labs(x="Year",y="Number of finishes",title="Consistency of finishers")+
+        theme_classic()+scale_fill_manual(values = fill)
